@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class GenericArrayTest {
@@ -45,6 +46,19 @@ public class GenericArrayTest {
         for (int i = 0; i < array2.size(); i++) {
             System.out.println(array2.get(i).getClass().getName());
         }
+
+        // Write code to use all the unused methods of Array<T> class.
+        System.out.println(array.get(0));
+        array.set(0, 100);
+        System.out.println(array.get(0));
+        array.remove(0);
+        System.out.println(array.get(0));
+        array.add(100);
+        System.out.println(array.get(0));
+        System.out.println(array.size());
+        System.out.println(array.toString());
+        System.out.println(array.hashCode());
+        System.out.println(array.hashCode(2));
 
         // Print Bye-Bye.
         System.out.println("Bye-Bye");
@@ -102,5 +116,21 @@ class Array<T> {
 
     public int size() {
         return array.length;
+    }
+    // Write a method to set the value at a given index.
+    public void set(int index, T value) {
+        array[index] = value;
+    }
+    // Write a method to remove the value at a given index.
+    public void remove(int index) {
+        array[index] = null;
+    }
+    // Write a method to return hash code of the array.
+    public int hashCode() {
+        return Arrays.hashCode(array);
+    }
+    // Write a method to return the hash code of the value at a given index.
+    public int hashCode(int index) {
+        return array[index].hashCode();
     }
 }
